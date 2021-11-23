@@ -12,6 +12,7 @@ abstract class UserDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
 
     companion object {
+        // region implantation of singleton
         @Volatile
         private var INSTANCE: UserDatabase? = null
 
@@ -30,6 +31,7 @@ abstract class UserDatabase : RoomDatabase() {
                 return instance
             }
         }
+        // endregion
     }
 
 }
