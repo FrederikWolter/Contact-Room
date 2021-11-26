@@ -22,27 +22,19 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
     }
 
     fun addUser(user: User){
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.addUser(user)
-        }
+        viewModelScope.launch(Dispatchers.IO) { repository.addUser(user)  }
     }
 
     fun updateUser(user: User){
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.updateUser(user)
-        }
+        viewModelScope.launch(Dispatchers.IO) { repository.updateUser(user) }
     }
 
     fun deleteUser(user: User){
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.deleteUser(user)
-        }
+        viewModelScope.launch(Dispatchers.IO) { repository.deleteUser(user) }
     }
 
     fun deleteAllUsers(){
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.deleteAllUsers()
-        }
+        viewModelScope.launch(Dispatchers.IO) { repository.deleteAllUsers() }
     }
 
 }
